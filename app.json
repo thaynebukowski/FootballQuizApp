@@ -14,10 +14,9 @@
     },
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier": "com.thaynebukowski.footballquizapp",
       "infoPlist": {
-        "NSCameraUsageDescription": "This app uses the camera to let users add images or videos to quizzes.",
-        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to let you upload images and videos.",
-        "NSPhotoLibraryAddUsageDescription": "This app needs access to save quiz media to your photo library."
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
@@ -27,16 +26,26 @@
       },
       "edgeToEdgeEnabled": true,
       "permissions": [
-        "CAMERA",
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE"
+        "android.permission.RECORD_AUDIO"
       ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-video"
-    ]
+      "expo-video",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app needs access to your photos to let you attach them to quiz questions.",
+          "cameraPermission": "The app needs access to your camera to let you take photos for quiz questions."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "3bf30e27-556d-4818-9412-32007f97c2f5"
+      }
+    }
   }
 }
